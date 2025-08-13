@@ -1,0 +1,33 @@
+<!-- Título principal centrado -->
+<h1>🍊 Tienda de Frutas</h1>
+
+<!-- Contenedor principal de las frutas, usa estilos de Flexbox desde CSS -->
+<div class="frutas">
+  <!-- Recorre la lista de frutas y muestra una tarjeta por cada una -->
+  <div class="fruta" *ngFor="let fruta of frutas">
+    <!-- Muestra la imagen de la fruta -->
+    <img [src]="fruta.imagen" alt="{{ fruta.nombre }}">
+    <!-- Nombre de la fruta -->
+    <h3>{{ fruta.nombre }}</h3>
+    <!-- Precio de la fruta -->
+    <p>Precio: ${{ fruta.precio }}</p>
+  </div>
+</div>
+
+<!-- Línea divisoria -->
+<hr>
+
+<!-- Sección para agregar una nueva fruta -->
+<h2>Agregar Nueva Fruta</h2>
+
+<!-- Campo para ingresar el nombre, enlazado con ngModel a nuevaFruta.nombre -->
+<input type="text" placeholder="Nombre" [(ngModel)]="nuevaFruta.nombre">
+
+<!-- Campo para ingresar el precio, enlazado con ngModel a nuevaFruta.precio -->
+<input type="number" placeholder="Precio" [(ngModel)]="nuevaFruta.precio">
+
+<!-- Campo para ingresar la URL de la imagen, enlazado con ngModel a nuevaFruta.imagen -->
+<input type="text" placeholder="URL de imagen" [(ngModel)]="nuevaFruta.imagen">
+
+<!-- Botón que al hacer clic ejecuta la función agregarFruta() -->
+<button (click)="agregarFruta()">Agregar</button>
