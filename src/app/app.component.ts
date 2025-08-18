@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css'] // Ruta del archivo CSS asociado
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   // Lista inicial de frutas que se mostrarán
   frutas = [
     {
